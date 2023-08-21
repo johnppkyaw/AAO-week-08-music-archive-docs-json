@@ -118,57 +118,93 @@
   "7": {
     "endpoint": "Get a specific album's details based on albumId",
     "request": {
-      "method": "",
-      "URL": "",
-      "headers": null,
-      "body": null
+      "method": "GET",
+      "URL": "/albums/:albumId",
+      "headers": false,
+      "body": false
     },
     "response": {
-      "headers": null,
-      "statusCode": null,
-      "body": null
+      "headers": {"Content-Type":"application/json"},
+      "statusCode": 200,
+      "body": {
+        "name": true,
+        "albumId": true,
+        "artistId": true,
+        "artist": {
+          "name": true,
+          "artistId": true
+        },
+        "songs": [
+          {
+            "name": true,
+            "lyrics": true,
+            "albumId": true,
+            "songId": true,
+            "trackNumber": true,
+            "createdAt": true,
+            "updatedAt": true
+          }
+        ]
+      }
     }
   },
   "8": {
     "endpoint": "Add an album to a specific artist based on artistId",
     "request": {
-      "method": "",
-      "URL": "",
-      "headers": null,
-      "body": null
+      "method": "POST",
+      "URL": "/artists/:artistId/albums",
+      "headers": {
+        "Content-Type":"application/json"
+      },
+      "body": {
+        "name": true
+      }
     },
     "response": {
-      "headers": null,
-      "statusCode": null,
-      "body": null
+      "headers": {"Content-Type":"application/json"},
+      "statusCode": 201,
+      "body": {
+        "name": true,
+        "albumId": true,
+        "artistId": true
+      }
     }
   },
   "9": {
     "endpoint": "Edit a specified album by albumId",
     "request": {
-      "method": "",
-      "URL": "",
-      "headers": null,
-      "body": null
+      "method": "PATCH",
+      "URL": "/albums/:albumId",
+      "headers": {"Content-Type":"application/json"},
+      "body": {
+        "name": true
+      }
     },
     "response": {
-      "headers": null,
-      "statusCode": null,
-      "body": null
+      "headers": {"Content-Type":"application/json"},
+      "statusCode": 200,
+      "body": {
+        "name":true,
+        "albumId": true,
+        "artistId": true,
+        "updatedAt": true
+      }
     }
   },
   "10": {
     "endpoint": "Delete a specified album by albumId",
     "request": {
-      "method": "",
-      "URL": "",
-      "headers": null,
-      "body": null
+      "method": "DELETE",
+      "URL": "/albums/:albumId",
+      "headers": false,
+      "body": false
     },
     "response": {
-      "headers": null,
-      "statusCode": null,
-      "body": null
+      "headers": {"Content-Type":"application/json"},
+      "statusCode": 200,
+      "body": {
+        "message": true
+      }
     }
   },
   "11": {
